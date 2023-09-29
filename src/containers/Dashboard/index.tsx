@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Form, Button, Space, Table, Card } from 'antd';
-import { useFetchData } from '../../components/hooks'
+// import { useFetchData } from '../../components/hooks'
 import { useNavigate } from 'react-router-dom';
 import type { ColumnsType } from 'antd/es/table';
 import Swal from 'sweetalert2'
@@ -12,27 +12,27 @@ interface DataType {
   is_active: boolean;
 }
 
-interface DataProfile {
-  name?: string;
-}
+// interface DataProfile {
+//   name?: string;
+// }
 
 const Dashboard: React.FC = () => {
   const navigate = useNavigate();
   const validate = localStorage.getItem('token');
 
-  if (!validate) {
-    navigate('/')
-  }
+  // if (!validate) {
+  //   navigate('/')
+  // }
 
   const [dataList, setData] = useState<DataType[]>([]);
 
-  const { data } = useFetchData<DataProfile>({
-    url: 'https://mock-api.arikmpt.com/api/user/profile',
-    method: 'GET',
-    headers: {
-      Authorization: `Bearer ${validate}`,
-    },
-  });
+  // const { data } = useFetchData<DataProfile>({
+  //   url: 'https://mock-api.arikmpt.com/api/user/profile',
+  //   method: 'GET',
+  //   headers: {
+  //     Authorization: `Bearer ${validate}`,
+  //   },
+  // });
 
   useEffect(() => {
     fetchData();
@@ -157,11 +157,12 @@ const Dashboard: React.FC = () => {
     }}>
       <Form.Item>
         <Button type="primary" className="login-link" onClick={() => { navigate('/add-item') }} style={{ marginRight: '550px' }}>Add New Category</Button>
+        <Button type="primary" className="login-link" onClick={() => { navigate('/profile') }} style={{marginRight: '10px' }}>Profile</Button>
         <Button type="primary" className="login-link" onClick={handleLogout} >Logout</Button>
       </Form.Item>
-      <div>
+      {/* <div>
         name: {data?.name}
-      </div>
+      </div> */}
       {dataList ? (
         <Table
           dataSource={dataList}

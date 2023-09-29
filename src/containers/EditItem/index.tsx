@@ -76,12 +76,14 @@ const { id } = useParams<{ id: string }>();
       >
       <Form.Item name="name" rules={[{ required: true }]}>
           <Input
+            title='name'
             placeholder='Name'
             allowClear />
         </Form.Item>
         
         <Form.Item name="status" rules={[{ required: true }]}>
           <Select
+            title='status'
             placeholder="Select a status option"
             allowClear
           >
@@ -92,8 +94,8 @@ const { id } = useParams<{ id: string }>();
 
         <Form.Item>
           <Space>
-            <Button type="primary" htmlType="submit">Submit</Button>
-            <Button htmlType="button" onClick={() => { navigate('/dashboard') }}>Back</Button>
+            <Button type="primary" htmlType="submit" title='submit'>Submit</Button>
+            <Button htmlType="button" onClick={() => { navigate('/dashboard') }} title='back'>Back</Button>
           </Space>
         </Form.Item>
       </Form>

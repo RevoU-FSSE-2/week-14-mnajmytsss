@@ -22,7 +22,7 @@ const validationSchema = yup.object().shape({
   status: yup.string().required("Status is required"),
 });
 
-const AddForm: React.FC = () => {
+const AddItem: React.FC = () => {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
   const handleSubmit = async (values: AddPage) => {
@@ -94,6 +94,7 @@ const AddForm: React.FC = () => {
         >
           <Input
             name="name"
+            title="name"
             placeholder="Name"
             value={formik.values.name}
             onChange={formik.handleChange}
@@ -102,7 +103,8 @@ const AddForm: React.FC = () => {
         </Form.Item>
         <Form.Item name="status">
           <Select
-            placeholder="Select Option"
+            title="status"
+            placeholder="Select Status"
             allowClear
             value={formik.values.status}
             onChange={(value) => formik.setFieldValue("status", value)}
@@ -116,12 +118,13 @@ const AddForm: React.FC = () => {
           <Space>
             <Button
               type="primary"
+              title="submit"
               htmlType="submit"
               disabled={!formik.isValid || formik.isSubmitting}
             >
               SUBMIT
             </Button>
-            <Button href="/dashboard" htmlType="button">
+            <Button href="/dashboard" htmlType="button" title="back">
               BACK
             </Button>
           </Space>
@@ -131,4 +134,4 @@ const AddForm: React.FC = () => {
   );
 };
 
-export default AddForm;
+export default AddItem;

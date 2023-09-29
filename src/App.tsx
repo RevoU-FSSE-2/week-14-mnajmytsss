@@ -7,6 +7,7 @@ import EditItem from "./containers/EditItem";
 import AddItem from "./containers/AddItem";
 import PublicLayout from "./Layout/PublicLayout";
 import AppProvider from "./Provider/AppProvider";
+import Profile from "./containers/Profile";
 
 function App() {
   const router = createBrowserRouter([
@@ -33,6 +34,10 @@ function App() {
           path: "/edit-item/:id",
           element: <EditItem />,
         },
+        {
+          path: "/profile",
+          element: <Profile />
+        }
       ],
     },
 

@@ -84,7 +84,8 @@ const Register = () => {
         >
           <Input
             name="name"
-            placeholder="name"
+            title="name"
+            placeholder="Name"
             value={formik.values.name}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -98,6 +99,7 @@ const Register = () => {
         >
           <Input
             name="email"
+            title="email"
             placeholder="Email"
             value={formik.values.email}
             onChange={formik.handleChange}
@@ -112,7 +114,8 @@ const Register = () => {
         >
           <Input.Password
             name="password"
-            placeholder="password"
+            title="password"
+            placeholder="Password"
             value={formik.values.password}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -120,7 +123,7 @@ const Register = () => {
         </Form.Item>
 
         <Form.Item style={{display: "block", alignItems: "center", justifyContent: "center", flexDirection: "row"}}>
-          <Button type="primary" htmlType="submit" style={{margin: '10px'}}>
+          <Button type="primary" htmlType="submit" style={{margin: '10px'}} title="Register">
             REGISTER
           </Button>
           <Typography style={{marginBottom: '5px'}}>
