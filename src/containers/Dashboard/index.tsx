@@ -12,27 +12,11 @@ interface DataType {
   is_active: boolean;
 }
 
-// interface DataProfile {
-//   name?: string;
-// }
-
 const Dashboard: React.FC = () => {
   const navigate = useNavigate();
   const validate = localStorage.getItem('token');
 
-  // if (!validate) {
-  //   navigate('/')
-  // }
-
   const [dataList, setData] = useState<DataType[]>([]);
-
-  // const { data } = useFetchData<DataProfile>({
-  //   url: 'https://mock-api.arikmpt.com/api/user/profile',
-  //   method: 'GET',
-  //   headers: {
-  //     Authorization: `Bearer ${validate}`,
-  //   },
-  // });
 
   useEffect(() => {
     fetchData();
@@ -116,7 +100,7 @@ const Dashboard: React.FC = () => {
         <>
           <Space size="middle">
             <Button type='primary' onClick={() => { navigate(`/edit-item/${id.id}`) }}>Edit Status</Button>
-            <Button type="primary" danger ghost onClick={() => handleDelete(id.id)}>Delete</Button>
+            <Button title='Delete' type="primary" danger ghost onClick={() => handleDelete(id.id)}>Delete</Button>
           </Space>
         </>
       ),
