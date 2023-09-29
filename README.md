@@ -42,6 +42,12 @@ Formik and Yup work in tandem to implement client-side validation. This means th
 
 The project offers users the ability to navigate between form steps. Users can easily return to a previous step to make corrections if necessary, providing a better user experience and reducing errors in form completion.
 
+
+## I've already test all the text/label that exist in every pages
+
+you can try the unit test by download all the packages that exist on the
+package.json on dev.dependencies and type ```pnpm run test``` on your terminal then enter!
+
 In summary, this project is a web application that simplifies the registration process for users by guiding them through predefined steps, requiring valid information, and providing helpful feedback throughout the process.
 <br>
 <img src="../week-13-mnajmytsss/src/assets/123.png">
